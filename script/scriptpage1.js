@@ -41,33 +41,6 @@ function contarParticipantes() {
     totalParticipantsSpan.textContent = '0';
   }
 
-  // Agregamos la función para guardar datos en localStorage
-function guardarDatosPaso1() {
-  localStorage.setItem('tituloSorteo', document.getElementById('inputTitulo').value);
-  localStorage.setItem('participantes', document.getElementById('participants').value);
-  // Puedes agregar más datos si es necesario
-}
-
-// Modificamos el evento del botón para incluir la función de guardarDatosPaso1
-document.getElementById('buttonComenzar').addEventListener('click', function() {
-  guardarDatosPaso1();
-  window.location.href = 'C:\Users\maikol.oropeza\Desktop\Sorteadorbplay2024\pages\parameters.html'; // Cambia la ruta según sea necesario
-});
-
-// Recuperamos datos almacenados en localStorage
-document.getElementById('winnersnmber').value = localStorage.getItem('cantidadGanadores') || 1;
-document.getElementById('subwinnersNmber').value = localStorage.getItem('cantidadSuplentes') || 0;
-// Puedes agregar más líneas para recuperar otros datos si es necesario
-
-// Modificamos el evento del botón para incluir la función de guardarDatosPaso2
-document.getElementById('buttonSortear').addEventListener('click', function() {
-    // Guardamos datos del Paso 2 (si es necesario)
-    localStorage.setItem('cantidadGanadores', document.getElementById('winnersnmber').value);
-    localStorage.setItem('cantidadSuplentes', document.getElementById('subwinnersNmber').value);
-
-    // Redireccionamos o realizamos la acción necesaria
-    // window.location.href = ...; // Cambia la ruta según sea necesario
-});
 
   function importarArchivo(event) {
     var fileInput = event.target;
