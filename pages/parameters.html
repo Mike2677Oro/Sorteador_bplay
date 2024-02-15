@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bplay Sorteos</title>
+    <link rel="stylesheet" href="/styles/parametersStyle.css">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <header>  
+        <img src="../img/header.svg" alt="header" width="100%" height="100%">
+    </header><br><br><br>
+
+                   <!-- Logobplay -->
+    <section class="logo">
+        <img src="../img/logo bplay sorteos.svg" alt="Logo" width="200px" height="123px">
+        <h2></h2>
+    </section><br><br><br>
+
+
+         <!-- parametros -->
+
+    <section class="containerParameters">
+        <div class="parameters">
+            <label for="winnersnmber" id="winners">
+                <h3 class="ganadoresTxt">#Ganadores</h3>
+                <button class="botonUp1">
+                <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button class="botonDown1">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </label>
+            <input type="number" id="winnersnmber" value="1" min="1" max="10"> 
+
+            <label for="suplentes" id="subwinners">
+                <h3 class="suplentesTxt">#Suplentes</h3>
+                <button class="botonUp2">
+                <i class="fa-solid fa-chevron-up"></i>
+                </button>
+                <button class="botonDown2">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </label>
+            <input type="number" id="subwinnersNmber" id="suplentes" value="0" min="0" max="10">
+
+            <h3 class="filtroTxt">Filtrar Duplicados</h3>
+            <input type="checkbox" id="toggle" class="offscreen"/>
+            <label for="toggle" class="switch"></label>
+
+            <label for="Chances">
+                <h3 class="chancesTxt">Chances Extra</h3>
+            </label>
+            <input type="checkbox" id="toggle2" class="offscreen2"/>
+            <label for="toggle2" class="switch2"></label>
+            <label for="Parametro">
+                <h3 class="parametroTxt">Parámetro</h3>
+
+            </label>
+            <input type="text" id="parameTexarea">
+        </div>  
+
+        <div class="totalP">Total participantes:
+            <span>0</span>
+        </div>
+        
+    </section>    
+
+    <button class="SortearBtn">
+    <a id="buttonSortear" href="#">Sortear</a>
+    </button><br><br>
+
+    <footer>
+        <p>&copy; 2023 bplay Sorteos. Todos los derechos reservados.</p>
+    </footer>
+
+<script src="./script/scriptpage1.js"></script>    
+</body>
+</html>

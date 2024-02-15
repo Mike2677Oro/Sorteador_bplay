@@ -1,0 +1,142 @@
+
+*{
+    text-align: center;
+    background-color: black;
+    opacity: 1;
+    color: white;
+    font-family:sans-serif;
+    align-items: center;
+}
+
+
+#inputTitulo{
+    border: 2px solid #F5F5F5;
+    border-radius: 10px;
+    opacity: 1;
+    text-align: left;
+    width: 485px;
+    padding-left: 30px;
+
+}
+
+
+#titulo{
+  color: #30D87B;
+  position: relative;
+  right: 188px;
+  top: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+
+#part{
+color: #30D87B;
+position: relative;
+right: 180px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.participantestArea{ 
+  border: 2px solid #F5F5F5;
+  border-radius: 20px;
+  opacity: 1;
+  resize: none;
+  text-align: left;
+  padding-top: 15px;
+  padding-left: 30px;
+  width: 485px;
+  position: relative;
+  left: 25px;
+  
+}
+
+
+.participantestArea::-webkit-scrollbar{
+    width: 10px;
+}
+
+.participantestArea::-webkit-scrollbar-thumb{
+    background: #30D87B;
+    border-radius: 50px;
+    height: 10px;
+    
+}
+
+h5{
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+}
+.btnFile{
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.custom-button{
+  position: relative;
+  right: 110px;
+  top: 10px;
+  cursor: pointer;
+}
+
+
+.resetfile{
+    border: 1px solid transparent;
+    position: relative;
+    left: 250px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+#iconobasura{
+  position: relative;
+  left: 7px;
+}
+
+.textAreaLineCount{
+  display: inline;
+    position: relative;
+    right: 80px;
+    bottom: 15px;
+    font-size: 14px;
+
+}
+
+.ph-center {
+    height: 40px;
+  }
+  .ph-center::-webkit-input-placeholder {
+    text-align: left;
+    padding-top: 5px;
+    padding-left: 20px;
+  }
+
+  #participantestArea::placeholder{
+    text-align: left;
+    padding-top: 1px;
+    padding-left: 32px;
+  }
+
+  .comenzar{
+    padding: 10px 50px;
+    border: 2px solid #30D87B;
+    border-radius: 30px;
+    background-color: #30D87B;
+    position: relative;
+    right: 30px;
+    top: 70px;
+
+  }
+
+  #buttonComenzar{
+    text-decoration: none;
+    background: transparent;
+    color: black;
+    font-family:sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+ .comenzar:hover{
+    background: #69fdac;
+  }
+
+  

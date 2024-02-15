@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bplay Sorteos</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    
+</head>
+<body>
+                    <!-- Header -->
+    <header>  
+        <img src="./img/header.svg" alt="header" width="100%" height="100%">
+    </header><br><br><br>
+
+                   <!-- Logobplay -->
+    <section class="logo">
+        <img src="./img/logo bplay sorteos.svg" alt="Logo" width="200px" height="123px">
+        <h5>Elegí uno o más ganadores al azar</h5>
+    </section>
+    
+                 <!-- tituloSorteo -->
+    <div class="formGroup">
+        <label id="titulo" for="tituloSorteo">&nbsp; Título &nbsp;</label>
+        <div>
+            <input class="ph-center" type="text" id="inputTitulo" id="tituloSorteo" placeholder="Ingresá el nombre de la promoción o motivo de sorteo." size="60">
+        </div>
+    </div><br>
+                  <!-- Participantes -->
+    <div class="formGroup">
+        <label id="part" for="participantes">&nbsp; Participantes &nbsp;</label>
+        <div>
+            <textarea class="participantestArea" id="participants" cols="70" rows="13" placeholder="Agregá el nombre de los participantes." oninput="contarParticipantes()" onkeydown="agregarParticipante(event)"></textarea>
+            <p class="textAreaLineCount">Total: <span id="totalParticipants">0</span></p>
+        </div>
+    </div>
+                          <!-- boton para importar archivos -->
+    <div class="btnForm">
+        <label for="fileInput" class="custom-button">
+            <img src="./img/icono  cargar.svg" alt="Importar" width="14px" height="14px">
+            Importar archivos: csv,txt o xlsx
+          </label>
+          <input id="fileInput" class="fileBTN" type="file" accept=".txt, .csv, .xlsx" onchange="importarArchivo(event)" style="display: none;">
+            
+        </div>
+                         <!-- boton para limpiar la lista -->
+        <button type="reset" class="resetfile">
+            <img src="./img/icono basura.svg" alt="reset" width="14px" height="14px" id="iconobasura">
+            <button class="resetfile" onclick="resetearParticipantes()">Limpiar</button>
+        </button>
+                  <!-- boton para avanzar a la página de parametros -->
+        <button class="comenzar" id="btnComenzar"> 
+         <a id="buttonComenzar" href="http://127.0.0.1:5500/pages/parameters.html">Comenzar</a>
+        </button>
+    </div><br><br><br><br><br><br><br>
+                      
+                          <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 bplay Sorteos. Todos los derechos reservados.</p>
+    </footer>
+    
+    
+    
+    
+<script src="./script/scriptpage1.js"></script>
+</body>
+</html>

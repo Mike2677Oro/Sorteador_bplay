@@ -1,0 +1,251 @@
+*{
+    text-align: center;
+    background-color: black;
+    opacity: 1;
+    color: white;
+    font-family:sans-serif;
+}
+.containerParameters{
+    color: white;
+     
+}
+
+.wrap-toggle {
+    padding: 5rem;
+  }
+  
+  .switch{
+    position: relative;
+    display: inline-block;
+    width: 71px;
+    height: 25px;
+    background: black;
+    border-radius: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 2px solid #F5F5F5;
+    left: 100px;
+    bottom: 120px;
+  }
+  
+  .switch:after {
+    content: 'NO';
+    color: black;
+    position: absolute;
+    font-size: 13px;
+    font-weight: bold;
+    width: 30px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: #30D87B;
+    left: 0.1px;
+    transition: 0.3s;
+  }
+  
+  input[type='checkbox']:checked + .switch:after {
+    transform: translateX(40px);
+    background: #30D87B;
+    content: 'Sí';
+  }
+  
+  input[type='checkbox']:checked + .switch {
+    background-color: black;
+  }
+  
+  .offscreen {
+    display: none;
+  }
+
+  /* switch 2 */
+
+  .wrap-toggle2 {
+    padding: 5rem;
+  }
+  
+  .switch2{
+    position: relative;
+    display: inline-block;
+    width: 71px;
+    height: 25px;
+    background: black;
+    border-radius: 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 2px solid #F5F5F5;
+    left: 100px;
+    bottom: 170px;
+  }
+  
+  .switch2:after {
+    content: 'NO';
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: #30D87B;
+    left: 0.1px;
+    transition: 0.3s;
+  }
+  
+  input[type='checkbox']:checked + .switch2:after {
+    transform: translateX(40px);
+    background: #30D87B;
+    content: 'Sí';
+  }
+  
+  input[type='checkbox']:checked + .switch2 {
+    background-color: black;
+  }
+  
+  .offscreen2{
+    display: none;
+  }
+
+  /* Texto de parametros */
+  .ganadoresTxt{
+    position: relative;
+    right: 85px;
+    top: 5px;
+  }
+
+  .suplentesTxt{
+    position: relative;
+    right: 90px;
+    bottom: 35px;
+  }
+
+  .filtroTxt{
+    position: relative;
+    right: 60px;
+    bottom: 72px;;
+  }
+
+  .chancesTxt{
+    position: relative;
+    right: 77px;
+    bottom: 122px;
+  }
+
+  .parametroTxt{
+    position: relative;
+    right: 93px;
+    bottom: 170px;
+  }
+
+  #parameTexarea{
+    width: 71px;
+    height: 25px;
+    overflow-x: hidden;
+    position: relative;
+    background: #30D87B;
+    color: black;
+    font-weight: bold;
+    left: 102px;
+    bottom: 220px;
+    border: solid;
+    border-radius: 10px;
+  }
+
+  #winnersnmber{
+    width: 30px;
+    height: 24px;
+    overflow-x: hidden;
+    position: relative;
+    background: #30D87B;
+    color: black;
+    font-weight: bold;
+    left: 50px;
+    bottom: 40px;
+    border-radius: 5px;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+
+  #subwinnersNmber{
+    width: 30px;
+    height: 24px;
+    overflow-x: hidden;
+    position: relative;
+    background: #30D87B;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    left: 50px;
+    bottom: 85px;
+  }
+
+  .botonUp1 i, .botonDown1 i, .botonUp2 i, .botonDown2 i{
+    color: #30D87B;
+  }
+
+  .botonUp1, .botonDown1, .botonUp2, .botonDown2{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+ 
+  .botonUp1{
+    position: relative;
+    left: 150px;
+    bottom: 48px;
+  }
+
+  .botonDown1{
+    position: relative;
+    left: 120px;
+    bottom: 30px;
+  }
+
+  .botonUp2{
+    position: relative;
+    left: 150px;
+    bottom: 94px;
+  }
+
+  .botonDown2{
+    position: relative;
+    left: 120px;
+    bottom: 75px;
+  }
+
+  .totalP{
+    position: relative;
+    bottom: 180px;
+    color: #30D87B;
+
+  }
+
+  .SortearBtn{
+    padding: 10px 80px;
+    border: 2px solid #30D87B;
+    border-radius: 30px;
+    background-color: #30D87B;
+    position: relative;
+    bottom: 130px;
+  }
+
+  #buttonSortear{
+    text-decoration: none;
+    background: transparent;
+    color: black;
+    font-family:sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .SortearBtn:hover{
+    background: #69fdac;
+  }
+
+
+  
+
+ 
+  
+ 
