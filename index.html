@@ -30,7 +30,7 @@
     <div class="formGroup">
         <label id="part" for="participantes">&nbsp; Participantes &nbsp;</label>
         <div>
-            <textarea class="participantestArea" id="participants" cols="70" rows="13" placeholder="Agregá el nombre de los participantes." oninput="contarParticipantes()" onkeydown="agregarParticipante(event)"></textarea>
+            <textarea class="participantestArea" id="participants" cols="70" rows="13" placeholder="Agregá el nombre de los participantes." oninput="contarParticipantes()" onkeydown="agregarParticipante(event)" required></textarea>
             <p class="textAreaLineCount">Total: <span id="totalParticipants">0</span></p>
         </div>
     </div>
@@ -49,8 +49,8 @@
             <button class="resetfile" onclick="resetearParticipantes()">Limpiar</button>
         </button>
                   <!-- boton para avanzar a la página de parametros -->
-        <button class="comenzar" id="btnComenzar"> 
-         <a id="buttonComenzar" href="./pages/parameters.html">Comenzar</a>
+        <button class="comenzar" id="btnComenzar" > 
+         <a id="buttonComenzar" href="./pages/parameters.html" onclick="buttonComenzar()">Comenzar</a>
         </button>
     </div><br><br><br><br><br><br><br>
                       
