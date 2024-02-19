@@ -174,7 +174,9 @@ function coronometro() {
 
     if (segundos === 0) {
       document.querySelector("#sorteando").style.display = "none";
-      document.querySelector("#resultado").style.display = "block";
+      document.querySelector("#resultado").style.display = "initial";
+      document.querySelector("#confeti").style.display = "initial";
+
     } else {
       segundos--;
       setTimeout(actualizarSegundo, 1000);
@@ -193,3 +195,13 @@ document.querySelector("#resetSorteo").addEventListener("click", () => {
 // rescata el valor del nombre del titulo y lo agrega el contenido a la pagina
 const tituloSorteo = localStorage.getItem("tituloSorteo");
 document.querySelector(".tituloSorteo").textContent = tituloSorteo;
+
+//Rescatar todos los parametros en ellocalStorage
+
+//Parametros de ganador y suplentes. Si ganador es menor a 2 no se puede aumentar el suplente
+
+//Si parametro chances extra es true se activa parametro sino no
+
+//Que aparezca losresultados arriba del confeti
+
+//Aumentar los numeros en los parametros de ganador y suplente

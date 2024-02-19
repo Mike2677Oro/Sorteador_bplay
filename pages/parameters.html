@@ -11,6 +11,18 @@
     ></script>
   </head>
   <body>
+    <img
+      src="../img//confetti-40.gif"
+      id="confeti"
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: 1;
+        display: none;
+      "
+    />
     <header>
       <img src="../img/header.svg" alt="header" width="100%" height="100%" />
     </header>
@@ -28,9 +40,9 @@
     </section>
     <br />
 
-      <div style="padding: 12px;">
-        <p >Nombre del sorteo: <span class="tituloSorteo"></span> </p>
-      </div>
+    <div style="padding: 12px">
+      <p>Nombre del sorteo: <span class="tituloSorteo"></span></p>
+    </div>
     <!-- parametros -->
 
     <section class="containerParameters">
@@ -84,21 +96,21 @@
         <span></span>
       </div>
       <button class="SortearBtn" onclick="buttonSortear()">
-        <a id="buttonSortear"
-          >Sortear</a
-        ></button
+        <a id="buttonSortear">Sortear</a></button
       ><br /><br />
     </section>
 
     <div id="sorteando" style="height: 100vw; display: none">
       <h1>Sorteando</h1>
-      <h2></h2>
+      <div>
+        <!-- spinner -->
+        <h2></h2> 
+      </div>
     </div>
 
-    <div id="resultado" style="height: 100vw; display: none">
-      
-      <p>ganador: <span id="ganador"></span></p>
-      <p>suplente: <span id="suplente"></span></p>
+    <div id="resultado" style="height: 100vw; display: none; z-index: 2">
+      <p style="z-index: 2">ganador: <span id="ganador"></span></p>
+      <p style="z-index: 2">suplente: <span id="suplente"></span></p>
       <a name="" id="resetSorteo" class="btn btn-primary" href="/" role="button"
         >Volver a sortear</a
       >
