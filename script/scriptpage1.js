@@ -19,13 +19,10 @@ function agregarParticipante(event) {
     // Obtener el contenido del Text Area y el total de participantes
     var participantsTextArea = document.getElementById("participants");
     var totalParticipantsSpan = document.getElementById("totalParticipants");
-
     // Agregar el nuevo participante a la lista
+
     participantsTextArea.value += "\n";
-
     // Contar y mostrar el total de participantes
-    contarParticipantes();
-
     // Evitar el salto de línea automático en el Text Area
     event.preventDefault();
   }
@@ -39,18 +36,6 @@ function resetearParticipantes() {
   // Restablecer el contenido del Text Area y el total de participantes
   participantsTextArea.value = "";
   totalParticipantsSpan.textContent = "0";
-}
-
-// Agregamos la función para guardar datos en localStorage
-function guardarDatosPaso1() {
-  localStorage.setItem(
-    "tituloSorteo",
-    document.getElementById("inputTitulo").value
-  );
-  localStorage.setItem(
-    "participantes",
-    document.getElementById("participants").value
-  );
 }
 
 function importarArchivo(event) {
@@ -83,14 +68,12 @@ function importarArchivo(event) {
 function procesarArchivoTXT(contenido) {
   var participantsTextArea = document.getElementById("participants");
   participantsTextArea.value = contenido;
-  localStorage.setItem("file", contenido);
   contarParticipantes();
 }
 
 function procesarArchivoCSV(contenido) {
   var participantsTextArea = document.getElementById("participants");
   var lineas = contenido.split("\n");
-
   // Limpiar el área de participantes antes de cargar el archivo CSV
   participantsTextArea.value = "";
 
@@ -103,9 +86,32 @@ function procesarArchivoCSV(contenido) {
 }
 
 function buttonComenzar() {
-  guardarDatosPaso1();
-  window.location.href =
-    "C:Usersmaikol.oropezaDesktopSorteadorbplay2024pagesparameters.html"; // Cambia la ruta según sea necesario
+  const tituloSorteo = document.getElementById("tituloSorteo").value
+  // guardar el titulo del sorteo en el localStorage
+  localStorage.setItem(
+    "tituloSorteo",
+    tituloSorteo
+  );
+  // valor del textarea
+  let participantsValue = document.getElementById("participants").value;
+  // aca se divide el contenido en lineas
+  let lines = participantsValue.split("\n");
+  // se filtran las líneas que no están en blanco
+  let nonEmptyLines = lines.filter(function (line) {
+    // elimina espacios en blanco al principio y al final de la línea
+    let trimmedLine = line.trim();
+    // devuelve true si la línea no está vacía después de recortar los espacios en blanco
+    return trimmedLine.length > 0;
+  });
+  // convierte las líneas no vacías de nuevo en un solo string
+  var filteredParticipantsValue = nonEmptyLines.join("\n");
+  // guardar los datos de los participants en el localStorage
+  localStorage.setItem("participantes", filteredParticipantsValue);
+  if(participantsValue.length > 0 && tituloSorteo.length > 0){
+    window.location.href = "./pages/parameters.html"; // Cambia la ruta según sea necesario
+  }else{
+    alert('Titulo y/o Participantes no pueden estar vacios')
+  }
 }
 
 // Rescatar los participantes del localStorage
@@ -123,8 +129,9 @@ function buttonSortear() {
   // elegir el suplente
   let suplente =
     storageParticipants[Math.floor(Math.random() * storageParticipants.length)];
+  console.log(ganador, suplente);
   // condicionar para que el suplente no sea igual al ganador
-  if (suplente === ganador) {
+  while (suplente === ganador) {
     suplente =
       storageParticipants[
         Math.floor(Math.random() * storageParticipants.length)
@@ -144,10 +151,10 @@ function buttonSortear() {
     `Participantes:\n${storageParticipants}\n\nGanador: ${ganador}\n\nSuplente: ${suplente}`
   );
   // Llamar cuenta regresiva
-  coronometro()
+  coronometro();
 
-  document.querySelector('#ganador').textContent = ganador
-  document.querySelector('#suplente').textContent = suplente
+  document.querySelector("#ganador").textContent = ganador;
+  document.querySelector("#suplente").textContent = suplente;
 }
 
 // Mostrar los segundos cada vez que pasa un segundo
@@ -158,16 +165,16 @@ function cuentaRegresiva(segundos) {
 
 // hacer la cuenta regresiva
 function coronometro() {
-  document.querySelector('.containerParameters').style.display = 'none'
-  document.querySelector('#sorteando').style.display = 'block'
+  document.querySelector(".containerParameters").style.display = "none";
+  document.querySelector("#sorteando").style.display = "block";
   let segundos = 3;
 
   function actualizarSegundo() {
     cuentaRegresiva(segundos);
 
     if (segundos === 0) {
-      document.querySelector('#sorteando').style.display = 'none'
-      document.querySelector('#resultado').style.display = 'block'
+      document.querySelector("#sorteando").style.display = "none";
+      document.querySelector("#resultado").style.display = "block";
     } else {
       segundos--;
       setTimeout(actualizarSegundo, 1000);
@@ -178,9 +185,11 @@ function coronometro() {
 
 // ... filtrar duplicados, chances, extras, parametro
 
-
 //Limpiar todos los valores del localStorage cuando va al home despues de terminar todo elsorteo
+document.querySelector("#resetSorteo").addEventListener("click", () => {
+  localStorage.clear();
+});
 
-document.querySelector('#resetSorteo').addEventListener('click',()=>{
-  localStorage.clear()
-})
+// rescata el valor del nombre del titulo y lo agrega el contenido a la pagina
+const tituloSorteo = localStorage.getItem("tituloSorteo");
+document.querySelector(".tituloSorteo").textContent = tituloSorteo;

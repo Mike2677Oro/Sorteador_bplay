@@ -9,7 +9,9 @@
     color: white;
      
 }
-
+button{
+  cursor: pointer;
+}
 .wrap-toggle {
     padding: 5rem;
   }

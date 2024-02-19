@@ -8,8 +8,11 @@
     align-items: center;
 }
 
+button{
+  cursor: pointer;
+}
 
-#inputTitulo{
+#tituloSorteo{
     border: 2px solid #F5F5F5;
     border-radius: 10px;
     opacity: 1;

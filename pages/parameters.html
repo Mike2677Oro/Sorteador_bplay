@@ -26,8 +26,11 @@
       />
       <h2></h2>
     </section>
-    <br /><br /><br />
+    <br />
 
+      <div style="padding: 12px;">
+        <p >Nombre del sorteo: <span class="tituloSorteo"></span> </p>
+      </div>
     <!-- parametros -->
 
     <section class="containerParameters">
@@ -80,8 +83,8 @@
         Total participantes:
         <span></span>
       </div>
-      <button class="SortearBtn">
-        <a id="buttonSortear" href="#" onclick="buttonSortear()"
+      <button class="SortearBtn" onclick="buttonSortear()">
+        <a id="buttonSortear"
           >Sortear</a
         ></button
       ><br /><br />
@@ -93,6 +96,7 @@
     </div>
 
     <div id="resultado" style="height: 100vw; display: none">
+      
       <p>ganador: <span id="ganador"></span></p>
       <p>suplente: <span id="suplente"></span></p>
       <a name="" id="resetSorteo" class="btn btn-primary" href="/" role="button"
