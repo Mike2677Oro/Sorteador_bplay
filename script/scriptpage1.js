@@ -86,16 +86,14 @@ function procesarArchivoCSV(contenido) {
 }
 
 function buttonComenzar() {
-  const tituloSorteo = document.getElementById("tituloSorteo").value
+  const tituloSorteo = document.querySelector("#tituloSorteo").value;
   // guardar el titulo del sorteo en el localStorage
-  localStorage.setItem(
-    "tituloSorteo",
-    tituloSorteo
-  );
+  localStorage.setItem("tituloSorteo", tituloSorteo);
   // valor del textarea
-  let participantsValue = document.getElementById("participants").value;
+  let participantsValue = document.querySelector("#participants").value;
   // aca se divide el contenido en lineas
   let lines = participantsValue.split("\n");
+  console.log(lines);
   // se filtran las líneas que no están en blanco
   let nonEmptyLines = lines.filter(function (line) {
     // elimina espacios en blanco al principio y al final de la línea
@@ -107,102 +105,168 @@ function buttonComenzar() {
   var filteredParticipantsValue = nonEmptyLines.join("\n");
   // guardar los datos de los participants en el localStorage
   localStorage.setItem("participantes", filteredParticipantsValue);
-  if(participantsValue.length > 0 && tituloSorteo.length > 0){
+  if (lines.length > 1 && tituloSorteo.length > 0) {
     window.location.href = "./pages/parameters.html"; // Cambia la ruta según sea necesario
-  }else{
-    alert('Titulo y/o Participantes no pueden estar vacios')
-  }
+  } else {
+    alert("- Título y/o Participantes no pueden estar vacíos\n- Debe haber más de un participante. ")
+    
 }
+}
+//Rescatar todos los parametros en el localStorage
+function onloadParameters() {
+  // rescata el valor del nombre del titulo y lo agrega el contenido a la pagina
+  document.querySelector(".tituloSorteo").textContent = localStorage.getItem("tituloSorteo");
+  
+  // Rescatar los participantes del localStorage
+  let storageParticipants = localStorage.getItem("participantes").split("\n");
+  document.querySelector(".totalP span").textContent = storageParticipants.length;
+  
+  //rescatar los valores de los parametros
+  let cantidadGanadores = document.querySelector("#winnersnmber");
+  let cantidadSuplentes = document.querySelector("#subwinnersNmber");
+  let filtrarDuplicados = document.querySelector("#toggle");
+  let chancesExtra = document.querySelector("#toggle2");
+  let parametro = document.querySelector("#parameTexarea");
+  
+  // Almacenamos datos en localStorage
+  localStorage.setItem("cantidadGanadores", cantidadGanadores.value);
+  localStorage.setItem("cantidadSuplentes", cantidadSuplentes.value);
+  localStorage.setItem("filtrarDuplicados", filtrarDuplicados.value);
+  localStorage.setItem("chancesExtra", chancesExtra.value);
+  localStorage.setItem("parametro", parametro.value);
 
-// Rescatar los participantes del localStorage
-let storageParticipants = localStorage.getItem("participantes");
-storageParticipants = storageParticipants.split("\n");
-
-const spanElement = document.querySelector(".totalP span");
-
-spanElement.innerHTML = storageParticipants.length;
-
-function buttonSortear() {
-  // elegir el ganador usando la libreria Math
-  const ganador =
-    storageParticipants[Math.floor(Math.random() * storageParticipants.length)];
-  // elegir el suplente
-  let suplente =
-    storageParticipants[Math.floor(Math.random() * storageParticipants.length)];
-  console.log(ganador, suplente);
-  // condicionar para que el suplente no sea igual al ganador
-  while (suplente === ganador) {
-    suplente =
+  // Sortear
+  document.querySelector("#buttonSorteo").addEventListener("click", () => {
+    // elegir el ganador usando la libreria Math
+    const ganador =
       storageParticipants[
         Math.floor(Math.random() * storageParticipants.length)
       ];
-  }
-
-  // Almacenamos datos en localStorage
-  localStorage.setItem(
-    "cantidadGanadores",
-    document.getElementById("winnersnmber").value
-  );
-  localStorage.setItem(
-    "cantidadSuplentes",
-    document.getElementById("subwinnersNmber").value
-  );
-  console.log(
-    `Participantes:\n${storageParticipants}\n\nGanador: ${ganador}\n\nSuplente: ${suplente}`
-  );
-  // Llamar cuenta regresiva
-  coronometro();
-
-  document.querySelector("#ganador").textContent = ganador;
-  document.querySelector("#suplente").textContent = suplente;
-}
-
-// Mostrar los segundos cada vez que pasa un segundo
-function cuentaRegresiva(segundos) {
-  let cuentaRegresiva = document.querySelector("#sorteando h2");
-  cuentaRegresiva.textContent = segundos;
-}
-
-// hacer la cuenta regresiva
-function coronometro() {
-  document.querySelector(".containerParameters").style.display = "none";
-  document.querySelector("#sorteando").style.display = "block";
-  let segundos = 3;
-  
-
-  function actualizarSegundo() {
-    cuentaRegresiva(segundos);
-
-    if (segundos === 0) {
-      document.querySelector("#sorteando").style.display = "none";
-      document.querySelector("#resultado").style.display = "initial";
-      document.querySelector("#confeti").style.display = "initial";
-
-    } else {
-      segundos--;
-      setTimeout(actualizarSegundo, 1000);
+    // elegir el suplente
+    let suplente =
+      storageParticipants[
+        Math.floor(Math.random() * storageParticipants.length)
+      ];
+    // condicionar para que el suplente no sea igual al ganador
+    while (suplente === ganador) {
+      suplente =
+        storageParticipants[
+          Math.floor(Math.random() * storageParticipants.length)
+        ];
     }
+    // Llamar cuenta regresiva
+    cronometro();
+
+    document.querySelector("#ganador").textContent = ganador;
+    document.querySelector("#suplente").textContent = suplente;
+  });
+
+  // Hacer la cuenta regresiva y cambiar el display para ver el conteo y luego el ganador
+  function cronometro() {
+    document.querySelector(".containerParameters").style.display = "none";
+    document.querySelector("#sorteando").style.display = "block";
+    let segundos = 3;
+    
+    function actualizarSegundo() {
+      cuentaRegresiva(segundos);
+      
+      if (segundos === 0) {
+        document.querySelector("#sorteando").style.display = "none";
+        document.querySelector("#resultado").style.display = "initial";
+        document.querySelector("#confeti").style.display = "initial";
+      } else {
+        segundos--;
+        setTimeout(actualizarSegundo, 1000);
+      }
+    }
+    actualizarSegundo();
   }
-  actualizarSegundo();
+  
+  // Mostrar los segundos cada vez que pasa un segundo
+  function cuentaRegresiva(segundos) {
+    let cuentaRegresiva = document.querySelector("#sorteando h2");
+    cuentaRegresiva.textContent = segundos;
+  }
+ 
+  //Limpiar todos los valores del localStorage cuando va al home despues de terminar todo elsorteo
+  document.querySelector("#resetSorteo").addEventListener("click", () => {
+    localStorage.clear();
+  });
+
+  // aumentar valor de ganadores
+  document.querySelector('.botonUp1').addEventListener('click', ()=>{
+    
+    if(Number(cantidadGanadores.value) > 0 && Number(cantidadGanadores.value) < 10){
+      const NuevaCantidadCanadores = Number(cantidadGanadores.value) + 1
+      cantidadGanadores.value = NuevaCantidadCanadores
+      console.log(cantidadGanadores.value);
+      localStorage.setItem("cantidadGanadores", NuevaCantidadCanadores);
+    }
+  })
+  // disminuir valor de ganadores
+  document.querySelector('.botonDown1').addEventListener('click', ()=>{
+
+    if(Number(cantidadGanadores.value) > 1 && Number(cantidadGanadores.value) <= 10 && Number(cantidadSuplentes.value) < (Number(cantidadGanadores.value) - 1)){
+      const NuevaCantidadCanadores = Number(cantidadGanadores.value) - 1
+      cantidadGanadores.value = NuevaCantidadCanadores
+      localStorage.setItem("cantidadGanadores", NuevaCantidadCanadores);
+    }
+  })
+  //aumentar valor de suplentes
+  document.querySelector('.botonUp2').addEventListener('click', ()=>{
+    if(Number(cantidadGanadores.value) > 1 && Number(cantidadSuplentes.value) < (Number(cantidadGanadores.value) - 1)){
+      const NuevaCantidadSuplentes = Number(cantidadSuplentes.value) + 1
+      cantidadSuplentes.value = NuevaCantidadSuplentes
+      localStorage.setItem("cantidadSuplentes", NuevaCantidadSuplentes);
+    }
+  })
+  //disminuir valor de suplentes
+  document.querySelector('.botonDown2').addEventListener('click', ()=>{
+    if(Number(cantidadSuplentes.value) > 0 && Number(cantidadGanadores.value) <= 10){
+      const NuevaCantidadSuplentes = Number(cantidadSuplentes.value) - 1
+      cantidadSuplentes.value = NuevaCantidadSuplentes
+      localStorage.setItem("cantidadSuplentes", NuevaCantidadSuplentes);
+    }
+  })
+
+  // activar y desactivar filtro de duplicado
+  document.querySelector('#toggle').addEventListener('click', ()=>{
+    if(localStorage.getItem("filtrarDuplicados") === "0"){
+      localStorage.setItem("filtrarDuplicados", '1');
+    }else{
+      localStorage.setItem("filtrarDuplicados", '0');
+    }
+  })
+  
+  //activar y descativar filtro chances extra, y activar y desactivar parametro
+  document.querySelector('#toggle2').addEventListener('click', ()=>{
+    if(localStorage.getItem("chancesExtra") === "0"){
+      localStorage.setItem("chancesExtra", '1');
+      parametro.disabled = false
+      parametro.focus()
+    }else{
+      localStorage.setItem("chancesExtra", '0');
+      document.querySelector('#parameTexarea').disabled = true
+    }
+  })
+  // ir guardando en el localStorage el valor del parametro mediante evento del input
+  parametro.addEventListener('input',()=>{
+    localStorage.setItem('parametro',parametro.value)
+  })
 }
 
-// ... filtrar duplicados, chances, extras, parametro
 
-//Limpiar todos los valores del localStorage cuando va al home despues de terminar todo elsorteo
-document.querySelector("#resetSorteo").addEventListener("click", () => {
-  localStorage.clear();
-});
+//Parametros de ganador y suplentes. Si ganador es menor a 2 no se puede aumentar el suplente (FINALIZADO)
 
-// rescata el valor del nombre del titulo y lo agrega el contenido a la pagina
-const tituloSorteo = localStorage.getItem("tituloSorteo");
-document.querySelector(".tituloSorteo").textContent = tituloSorteo;
+//Si parametro chances extra es true se activa parametro sino no (FINALIZADO)
 
-//Rescatar todos los parametros en ellocalStorage
+//Que aparezca los resultados arriba del confeti (FINALIZADO)
 
-//Parametros de ganador y suplentes. Si ganador es menor a 2 no se puede aumentar el suplente
+//Aumentar los numeros en los parametros de ganador y suplente (FINALIZADO)
 
-//Si parametro chances extra es true se activa parametro sino no
 
-//Que aparezca losresultados arriba del confeti
-
-//Aumentar los numeros en los parametros de ganador y suplente
+// FALTA POR HACER
+// SPINNER - Listo
+// FILTRE DUPLICADOS (FUNCIONABILIDAD)
+// CHANCES EXTRA (FUNCIONABILIDAD)
+//FUNCIÓN DE ELEGIR LA CANTIDAD DE GANADORES/SUPLENTES SELECCIONADOS
