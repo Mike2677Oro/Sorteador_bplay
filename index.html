@@ -23,14 +23,14 @@
     <div class="formGroup">
         <label id="titulo" for="tituloSorteo">&nbsp; Título &nbsp;</label>
         <div>
-            <input class="ph-center" type="text" id="inputTitulo" id="tituloSorteo" placeholder="Ingresá el nombre de la promoción o motivo de sorteo." size="60">
+            <input class="ph-center" type="text" id="tituloSorteo" placeholder="Ingresá el nombre de la promoción o motivo de sorteo." size="60">
         </div>
     </div><br>
                   <!-- Participantes -->
     <div class="formGroup">
         <label id="part" for="participantes">&nbsp; Participantes &nbsp;</label>
         <div>
-            <textarea class="participantestArea" id="participants" cols="70" rows="13" placeholder="Agregá el nombre de los participantes." oninput="contarParticipantes()" onkeydown="agregarParticipante(event)"></textarea>
+            <textarea class="participantestArea" id="participants" cols="70" rows="13" placeholder="Agregá el nombre de los participantes." oninput="contarParticipantes()" onkeydown="agregarParticipante(event)" required></textarea>
             <p class="textAreaLineCount">Total: <span id="totalParticipants">0</span></p>
         </div>
     </div>
@@ -38,7 +38,7 @@
     <div class="btnForm">
         <label for="fileInput" class="custom-button">
             <img src="./img/icono  cargar.svg" alt="Importar" width="14px" height="14px">
-            Importar archivos: csv,txt o xlsx
+            Importar archivos: csv o txt
           </label>
           <input id="fileInput" class="fileBTN" type="file" accept=".txt, .csv, .xlsx" onchange="importarArchivo(event)" style="display: none;">
             
@@ -49,8 +49,8 @@
             <button class="resetfile" onclick="resetearParticipantes()">Limpiar</button>
         </button>
                   <!-- boton para avanzar a la página de parametros -->
-        <button class="comenzar" id="btnComenzar"> 
-         <a id="buttonComenzar" href="./pages/parameters.html">Comenzar</a>
+        <button class="comenzar" id="btnComenzar" onclick="buttonComenzar()"> 
+         <a id="buttonComenzar" >Comenzar</a>
         </button>
     </div><br><br><br><br><br><br><br>
                       
