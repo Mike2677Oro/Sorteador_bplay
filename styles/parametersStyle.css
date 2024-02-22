@@ -343,9 +343,20 @@ top: 15px;
     border-radius: 30px;
     background-color: #30D87B;
     position: relative;
-    left: 845px;
+    left: 820px;
     top: 100px;
-    text-align:start;
+  }
+
+  #textBoton{
+    text-decoration: none;
+    background: transparent;
+    color: black
+    font-family:sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    bottom: 8px; 
   }
 
 
