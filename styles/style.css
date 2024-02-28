@@ -61,6 +61,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: #30D87B;
     border-radius: 50px;
     height: 10px;
+    cursor: pointer;
     
 }
 
@@ -108,7 +109,6 @@ h5{
   .ph-center::-webkit-input-placeholder {
     text-align: left;
     padding-top: 5px;
-    padding-left: 20px;
   }
 
   #participantestArea::placeholder{

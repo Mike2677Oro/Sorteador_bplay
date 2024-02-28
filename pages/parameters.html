@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bplay Sorteos</title>
-     <link rel="stylesheet" href="/styles/parametersStyle.css" /> 
+    <link rel="stylesheet" href="/styles/parametersStyle.css" />
+    <link rel="icon" href="/img/logo bplay sorteos.svg">
     <script
       src="https://kit.fontawesome.com/41bcea2ae3.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body onload="onloadParameters()">
-    
     <!-- <header>
       <img src="../img/header.svg" alt="header" width="100%" height="100%" />
     </header> -->
@@ -29,15 +29,10 @@
     </section>
     <br />
 
-    <section>
-    <div style="padding: 12px;">
+    <div>
       <p><span class="tituloSorteo"></span></p>
     </div>
-  </section>
-  <img
-      src="../img//confetti-40.gif"
-      id="confeti"
-    />
+    <img src="../img//confetti-40.gif" id="confeti" />
     <!-- parametros -->
 
     <section class="containerParameters">
@@ -51,11 +46,7 @@
             <i class="fa-solid fa-chevron-down"></i>
           </button>
         </label>
-        <input 
-          type="number" 
-          id="winnersnmber" 
-          value="1"
-        />
+        <input type="number" id="winnersnmber" value="1" />
         <label for="subwinnersNmber" id="subwinners">
           <h3 class="suplentesTxt">#Suplentes</h3>
           <button class="botonUp2">
@@ -65,17 +56,13 @@
             <i class="fa-solid fa-chevron-down"></i>
           </button>
         </label>
-        <input
-          type="number"
-          id="subwinnersNmber"
-          value="0"
-        />
+        <input type="number" id="subwinnersNmber" value="0" />
         <h3 class="filtroTxt">Filtrar Duplicados</h3>
-        <input type="checkbox" value='0' id="toggle" class="offscreen" />
+        <input type="checkbox" value="0" id="toggle" class="offscreen" />
         <label for="toggle" class="switch"></label>
 
         <h3 class="chancesTxt">Chances Extra</h3>
-        <input type="checkbox" value='0' id="toggle2" class="offscreen2" />
+        <input type="checkbox" value="0" id="toggle2" class="offscreen2" />
         <label for="toggle2" class="switch2"></label>
 
         <label for="parameTexarea">
@@ -93,31 +80,19 @@
       ><br /><br />
     </section>
 
-    <div id="sorteando" style="height: 100vw; display: none">
-        <h1>Sorteando</h1><br><br>
-        <div>
+    <div id="sorteando">
+      <h1>Sorteando</h1>
+      <div id="containerSpinner">
         <!-- spinner -->
-        <div class="loader">
-            <span style="--i:1"></span>
-            <span style="--i:2"></span>
-            <span style="--i:3"></span>
-            <span style="--i:4"></span>
-            <span style="--i:5"></span>
-            <span style="--i:6"></span>
-            <span style="--i:7"></span>
-            <span style="--i:8"></span>
-            <span style="--i:9"></span>
-            <span style="--i:10"></span>
-            <span style="--i:11"></span>
-            <span style="--i:12"></span>
-            <span style="--i:13"></span>
-            <span style="--i:14"></span>
-            <span style="--i:15"></span>
-            <span style="--i:16"></span>
-            <span style="--i:17"></span>
-            <span style="--i:18"></span>
-            <span style="--i:19"></span>
-            <span style="--i:20"></span>
+        <div class="dot-spinner">
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
+          <div class="dot-spinner__dot"></div>
         </div>
         <h2></h2>
       </div>
@@ -127,28 +102,29 @@
       ><br /><br />
     </div>
 
-    <div id="resultado" style="height: 100vw; display: none; ">
-        <h2 style="z-index: 2">FELICIDADES!<span></span></h2>
-        <div class="textGanador"><p>GANADOR: <span id="ganador"></span></p></div>
-        <div class="textSuplente"><p>SUPLENTE: <span id="suplente"></span></p></div>
-        <div class="btnSorteaAgain">
-            <div id="textBoton">
-                <a name="" id="resetSorteo" class="btn btn-primary" href="/" role="button"
-        >Sortear de nuevo</a
-        ><br /><br /><br /><br/>
-                
-            </div>
-        </div>
-        
+
+    <div class="volverSortear" id="resultado">
+      <h1>¡FELICIDADES!</h1>
+      <div>
+        <h3 id="tituloGanador"></h3>
+        <div id="ganador"></div>
+      </div>
+
+      <div id="contenedorSuplente">
+        <h3 id="tituloSuplente"></h3>
+        <div id="suplente"></div>
+      </div>
+      <br><br><br><br>
+
+      <a name="" id="resetSorteo" class="btn btn-primary" href="/" role="button"
+        >Volver a sortear
+      </a>
+      <br /><br /><br /><br />
     </div>
     
-
-    
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <footer>
-        <h3>&copy; 2023 bplay Sorteos. Todos los derechos reservados.</h3>
+    <footer class="footer">
+      <p>&copy; 2023 bplay Sorteos. Todos los derechos reservados.</p>
     </footer>
-        
     <script src="../script/scriptpage1.js"></script>
   </body>
 </html>
