@@ -55,9 +55,15 @@ function importarArchivo(event) {
         // Procesar como archivo CSV
         procesarArchivoCSV(contenido);
       } else {
-        alert(
-          "Formato de archivo no admitido. Solo se admiten archivos .txt y .csv."
-        );
+        swal.fire({
+          title: '<span class="alertTituloError">Error</span>',
+          html: '<b class="alertTitulo">Formato de archivo no admitido. Solo se admiten archivos .txt y .csv.</b>',
+          icon: 'warning',
+          padding: '0',
+          background: 'black',
+          confirmButtonText:'<span class="buttonOK">OK</span>',
+          confirmButtonColor:'#30D87B'
+        })
       }
     };
 
@@ -107,9 +113,15 @@ function buttonComenzar() {
   if (lines.length > 1 && tituloSorteo.length > 0) {
     window.location.href = "./pages/parameters.html"; // Cambia la ruta según sea necesario
   } else {
-    alert(
-      "- Título y/o Participantes no pueden estar vacíos\n- Debe haber más de un (1) participante. "
-    );
+    swal.fire({
+      title: '<span class="alertTituloError">Error</span>',
+      html: '<b class="alertTitulo"> Título y/o Participantes no pueden estar vacíos. Debe haber más de un (1) participante.</b>',
+      icon: 'warning',
+      padding: '0',
+      background: 'black',
+      confirmButtonText:'<span class="buttonOK">OK</span>',
+      confirmButtonColor:'#30D87B'
+    })
   }
 }
 function onloadParameters() {
@@ -240,7 +252,7 @@ function onloadParameters() {
     if (
       Number(cantidadGanadores.value) > 1 &&
       Number(cantidadGanadores.value) <= 10 &&
-      Number(cantidadSuplentes.value) < Number(cantidadGanadores.value) - 1
+      Number(cantidadSuplentes.value) < Number(cantidadGanadores.value) - 0
     ) {
       cantidadGanadores.value = Number(cantidadGanadores.value) - 1;
     }
@@ -294,23 +306,3 @@ function onloadParameters() {
   
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// FILTRE DUPLICADOS (FUNCIONABILIDAD) (FINALIZADO)
-
-// CHANCES EXTRA (FUNCIONABILIDAD) (CUANDO SEA NECESARIO)
-
-// --- FALTA POR HACER ---
-
-// HACER EL DOM DE LOS GANADORES Y SUPLENETES (SI HAY SUPLENTES) 
