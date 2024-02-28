@@ -128,6 +128,23 @@ h5{
 
   }
 
+  .alertTitulo{
+    font-weight: bold;
+    color: white;;
+    background-color: black;
+  }
+
+  .alertTituloError{
+    font-weight: bold;
+    color: #30D87B;
+  }
+
+  .buttonOK{
+    color: white;
+    font-weight: bold;
+    background: none;
+  }
+
   #buttonComenzar{
     text-decoration: none;
     background: transparent;
