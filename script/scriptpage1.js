@@ -237,46 +237,51 @@ function onloadParameters() {
     localStorage.clear();
   });
 
-  // aumentar valor de ganadores
-  document.querySelector(".botonUp1").addEventListener("click", () => {
-    if (
-      Number(cantidadGanadores.value) > 0 &&
-      Number(cantidadGanadores.value) < 10 &&
-      Number(cantidadGanadores.value) < (storageParticipants.length - 1)
-    ) {
-      cantidadGanadores.value = Number(cantidadGanadores.value) + 1;
-    }
-  });
-  // disminuir valor de ganadores
-  document.querySelector(".botonDown1").addEventListener("click", () => {
-    if (
-      Number(cantidadGanadores.value) > 1 &&
-      Number(cantidadGanadores.value) <= 10 &&
-      Number(cantidadSuplentes.value) < Number(cantidadGanadores.value) - 0
-    ) {
-      cantidadGanadores.value = Number(cantidadGanadores.value) - 1;
-    }
-  });
-  //aumentar valor de suplentes
-  document.querySelector(".botonUp2").addEventListener("click", () => {
-    if (
-      Number(cantidadGanadores.value) > 1 &&
-      Number(cantidadSuplentes.value) < Number(cantidadGanadores.value) - 1 &&
-      Number(cantidadSuplentes.value) + Number(cantidadGanadores.value) <
-        storageParticipants.length
-    ) {
-      cantidadSuplentes.value = Number(cantidadSuplentes.value) + 1;
-    }
-  });
-  //disminuir valor de suplentes
-  document.querySelector(".botonDown2").addEventListener("click", () => {
-    if (
-      Number(cantidadSuplentes.value) > 0 &&
-      Number(cantidadGanadores.value) <= 10
-    ) {
-      cantidadSuplentes.value = Number(cantidadSuplentes.value) - 1;
-    }
-  });
+ // aumentar valor de ganadores
+document.querySelector(".botonUp1").addEventListener("click", () => {
+  if (
+    Number(cantidadGanadores.value) === 1 &&
+    Number(cantidadSuplentes.value) === 0
+  ) {
+    cantidadSuplentes.value = 1;
+  }
+
+  if (
+    Number(cantidadGanadores.value) > 0 &&
+    Number(cantidadGanadores.value) < 10 &&
+    Number(cantidadGanadores.value) < (storageParticipants.length - 1)
+  ) {
+    cantidadGanadores.value = Number(cantidadGanadores.value) + 1;
+  }
+});
+
+// disminuir valor de ganadores
+document.querySelector(".botonDown1").addEventListener("click", () => {
+  if (
+    Number(cantidadGanadores.value) > 1 &&
+    Number(cantidadGanadores.value) <= 10
+  ) {
+    cantidadGanadores.value = Number(cantidadGanadores.value) - 1;
+  }
+});
+
+// aumentar valor de suplentes
+document.querySelector(".botonUp2").addEventListener("click", () => {
+  if (
+    Number(cantidadSuplentes.value) < Number(cantidadGanadores.value)
+  ) {
+    cantidadSuplentes.value = Number(cantidadSuplentes.value) + 1;
+  }
+});
+
+// disminuir valor de suplentes
+document.querySelector(".botonDown2").addEventListener("click", () => {
+  if (
+    Number(cantidadSuplentes.value) > 0
+  ) {
+    cantidadSuplentes.value = Number(cantidadSuplentes.value) - 1;
+  }
+});
 
   // activar y desactivar filtro de duplicado
   document.querySelector("#toggle").addEventListener("click", () => {
