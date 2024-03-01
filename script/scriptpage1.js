@@ -111,7 +111,7 @@ function buttonComenzar() {
   // guardar los datos de los participants en el localStorage
   localStorage.setItem("participantes", filteredParticipantsValue);
   if (lines.length > 1 && tituloSorteo.length > 0) {
-    window.location.href = "./pages/parameters.html"; // Cambia la ruta según sea necesario
+    window.location.href = "./pages/parameters.html";
   } else {
     swal.fire({
       title: '<span class="alertTituloError">Error</span>',
