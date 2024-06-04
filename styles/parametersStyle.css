@@ -334,7 +334,7 @@ justify-content: center;
 .box{
 padding: 1rem;
 background-color: #30D87B;
-width: 150px;
+/* width: 205px; */
 margin-bottom: 1rem;
 font-weight: bold;
 color: black;
