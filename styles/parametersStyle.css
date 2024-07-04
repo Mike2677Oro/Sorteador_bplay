@@ -51,7 +51,7 @@ display: none;
   width: 30px;
   height: 25px;
   border-radius: 10px;
-  background-color: #30D87A;
+  background-color: #04f77c;
   left: 0.1px;
   transition: 0.3s;
   display: flex;
@@ -62,7 +62,7 @@ display: none;
 
 input[type='checkbox']:checked + .switch:after {
   transform: translateX(40px);
-  background: #30D87B;
+  background: #04f77c;
   content: 'Sí';
 }
 
@@ -104,7 +104,7 @@ input[type='checkbox']:checked + .switch {
   width: 30px;
   height: 25px;
   border-radius: 10px;
-  background-color: #30D87B;
+  background-color: #04f77c;
   left: 0.1px;
   transition: 0.3s;
   display: flex;
@@ -115,7 +115,7 @@ input[type='checkbox']:checked + .switch {
 
 input[type='checkbox']:checked + .switch2:after {
   transform: translateX(40px);
-  background: #30D87B;
+  background: #04f77c;
   content: 'Sí';
 }
 
@@ -163,7 +163,7 @@ input[type='checkbox']:checked + .switch2 {
   height: 25px;
   overflow-x: hidden;
   position: relative;
-  background: #30D87B;
+  background: #04f77c;
   color: black;
   font-weight: bold;
   left: 102px;
@@ -177,7 +177,7 @@ input[type='checkbox']:checked + .switch2 {
   height: 24px;
   overflow-x: hidden;
   position: relative;
-  background: #30D87B;
+  background: #04f77c;
   color: black;
   font-weight: bold;
   left: 50px;
@@ -195,7 +195,7 @@ input[type=number]::-webkit-outer-spin-button {
   height: 24px;
   overflow-x: hidden;
   position: relative;
-  background: #30D87B;
+  background: #04f77c;
   color: black;
   font-weight: bold;
   border-radius: 5px;
@@ -204,7 +204,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .botonUp1 i, .botonDown1 i, .botonUp2 i, .botonDown2 i{
-  color: #30D87B;
+  color: #04f77c;
 }
 
 .botonUp1, .botonDown1, .botonUp2, .botonDown2{
@@ -240,14 +240,14 @@ input[type=number]::-webkit-outer-spin-button {
 .totalP{
   position: relative;
   bottom: 180px;
-  color: #30D87B;
+  color: #04f77c;
 }
 
 .SortearBtn{
   padding: 10px 80px;
-  border: 2px solid #30D87B;
+  border: 2px solid #04f77c;
   border-radius: 30px;
-  background-color: #30D87B;
+  background-color: #04f77c;
   position: relative;
   bottom: 130px;
 }
@@ -262,16 +262,16 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .tituloSorteo{
-  color: #30D87B;
+  color: #04f77c;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 20px; 
 }
 
 .cancelarBtn{
   padding: 10px 80px;
-  border: 2px solid #30D87B;
+  border: 2px solid #04f77c;
   border-radius: 30px;
-  background-color: #30D87B;
+  background-color: #04f77c;
   position: relative;
   top: 100px;
 }
@@ -298,9 +298,9 @@ input[type=number]::-webkit-outer-spin-button {
   color: black;
   font-weight:bold;
   padding: 10px 50px;
-  border: 2px solid #30D87B;
+  border: 2px solid #04f77c;
   border-radius: 30px;
-  background-color: #30D87B;
+  background-color: #04f77c;
   text-decoration: none;
 }
 
@@ -333,11 +333,12 @@ justify-content: center;
 }
 .box{
 padding: 1rem;
-background-color: #30D87B;
+background-color: #04f77c;
 /* width: 205px; */
 margin-bottom: 1rem;
 font-weight: bold;
 color: black;
+border-radius: 10px;
 }
 /* spinner */
 #containerSpinner{
@@ -353,7 +354,7 @@ position: absolute;
 .dot-spinner {
 --uib-size: 10rem;
 --uib-speed: .9s;
---uib-color: #30D87B;
+--uib-color: #04f77c;
 position: relative;
 display: flex;
 align-items: center;

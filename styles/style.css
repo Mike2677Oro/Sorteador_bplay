@@ -24,7 +24,7 @@ button{
 
 
 #titulo{
-  color: #30D87B;
+  color: #04f77c;
   position: relative;
   right: 188px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -32,7 +32,7 @@ button{
 }
 
 #part{
-color: #30D87B;
+color: #04f77c;
 position: relative;
 right: 180px;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -58,7 +58,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .participantestArea::-webkit-scrollbar-thumb{
-    background: #30D87B;
+    background: #04f77c;
     border-radius: 50px;
     height: 10px;
     cursor: pointer;
@@ -119,9 +119,9 @@ h5{
 
   .comenzar{
     padding: 10px 50px;
-    border: 2px solid #30D87B;
+    border: 2px solid #04f77c;
     border-radius: 30px;
-    background-color: #30D87B;
+    background-color: #04f77c;
     position: relative;
     right: 30px;
     top: 70px;
@@ -136,7 +136,7 @@ h5{
 
   .alertTituloError{
     font-weight: bold;
-    color: #30D87B;
+    color: #04f77c;
   }
 
   .buttonOK{
