@@ -62,7 +62,7 @@ function importarArchivo(event) {
           padding: '0',
           background: 'black',
           confirmButtonText:'<span class="buttonOK">OK</span>',
-          confirmButtonColor:'#30D87B'
+          confirmButtonColor:'#6f42c1'
         })
       }
     };
@@ -120,7 +120,7 @@ function buttonComenzar() {
       padding: '0',
       background: 'black',
       confirmButtonText:'<span class="buttonOK">OK</span>',
-      confirmButtonColor:'#30D87B'
+      confirmButtonColor:'#6f42c1'
     })
   }
 }
